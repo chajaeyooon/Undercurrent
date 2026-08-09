@@ -3,476 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNDERCURRENT | 정은주 전시 설명 및 모바일 리플렛</title>
-    <meta name="description" content="전 리듬체조 국가대표 출신 현대무용가 정은주 교수님의 전시 'UNDERCURRENT' 안내 및 모바일 리플렛 웹사이트. (주)더헤케이브 아트앤스포츠 대표 정은주의 융합 퍼포먼스와 신체언어를 탐구합니다.">
-    <meta name="keywords" content="정은주, 현대무용가, 리듬체조 국가대표, 더헤케이브 아트앤스포츠, The Hecabe Art & Sports, UNDERCURRENT, 전시 리플렛, 융합 퍼포먼스, 신체언어">
-    <meta property="og:title" content="UNDERCURRENT | 정은주 전시 설명 웹사이트">
-    <meta property="og:description" content="공연, 교육, 연구를 기반으로 한 신체언어와 확장된 퍼포먼스의 탐구">
-    <meta property="og:image" content="./assets/artist.png">
+    <title>UNDERCURRENT | 정은주</title>
+    <meta name="description" content="전시 'UNDERCURRENT' - BeComing ME, BeComing Blue, BeComing Movement, BeComing Presence">
+    <meta property="og:title" content="UNDERCURRENT | 정은주">
+    <meta property="og:description" content="BeComing ME, BeComing Blue, BeComing Movement, BeComing Presence">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Noto Serif KR & Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <!-- Background Animated Canvas -->
-    <canvas id="motionCanvas"></canvas>
-    
-    <!-- Header Navigation -->
-    <header class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-main">UNDERCURRENT</span>
-                <span class="logo-sub">정은주 개인전</span>
+    <!-- Subtle Background Canvas -->
+    <canvas id="subtleCanvas"></canvas>
+
+    <!-- Clean Navigation Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="site-container-wide header-inner">
+            <a href="#hero" class="header-logo">
+                <span class="logo-title">UNDERCURRENT</span>
+                <span class="logo-sub">정은주</span>
             </a>
-            
-            <nav class="nav-menu" id="navMenu">
+
+            <nav class="header-nav" id="headerNav">
                 <a href="#hero" class="nav-link active">홈</a>
-                <a href="#exhibition" class="nav-link">전시 개요</a>
-                <a href="#artist" class="nav-link">전시 작가 소개</a>
-                <a href="#works" class="nav-link">작품 & 퍼포먼스</a>
-                <a href="#research" class="nav-link">융합 연구</a>
-                <a href="#info" class="nav-link">관람 안내</a>
+                <a href="#section1" class="nav-link">#1 BeComing ME</a>
+                <a href="#section2" class="nav-link">#2 BeComing Blue</a>
+                <a href="#section3" class="nav-link">#3 BeComing Movement</a>
+                <a href="#section4" class="nav-link">#4 BeComing Presence</a>
+                <a href="#guestbook" class="nav-link">방명록</a>
             </nav>
-            
-            <div class="nav-actions">
-                <button class="btn-leaflet" id="openLeafletBtn">
-                    <i class="fa-solid fa-book-open"></i>
-                    <span>디지털 리플렛</span>
-                </button>
-                <button class="btn-qr" id="openQrBtn" title="QR 코드 공유">
-                    <i class="fa-solid fa-qrcode"></i>
-                </button>
-                <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기">
+
+            <div class="header-actions">
+                <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="메뉴 열기">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <main id="main-content">
-        <!-- Hero Section -->
+    <main id="main">
+        <!-- Serene Hero Section -->
         <section class="hero-section" id="hero">
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <div class="hero-badge animate-fade-up">
-                    <span class="badge-dot"></span> 2026 SPECIAL EXHIBITION & PERFORMANCE
-                </div>
-                <h1 class="hero-title animate-fade-up delay-1">
-                    <span class="en-title">UNDERCURRENT</span>
-                    <span class="kr-title">움직임의 융합과 확장된 신체언어</span>
+            <div class="site-container hero-inner">
+                <!-- Vertical Gradient Accent Line -->
+                <div class="hero-vertical-line"></div>
+                
+                <span class="hero-tag">UNDERCURRENT</span>
+                
+                <h1 class="hero-title">
+                    수면 아래의 파동,<br>
+                    <span class="bold-emphasis">BeComing</span>의 시간
                 </h1>
-                <p class="hero-subtitle animate-fade-up delay-2">
-                    수면 아래의 은밀한 파동에서 피어나는 무용, 미디어, 스포츠, 전통예술의 경계 없는 조화
+
+                <p class="hero-description">
+                    몸에 축적된 시간과 기억이 움직임으로 이어지고,<br class="hidden-mobile">
+                    현재의 공간 안에서 새롭게 깨어나는 4개의 여정
                 </p>
-                
-                <div class="hero-tags animate-fade-up delay-3">
-                    <span class="tag"><i class="fa-solid fa-person-dots-from-line"></i> 전 리듬체조 국가대표</span>
-                    <span class="tag"><i class="fa-solid fa-masks-theater"></i> 현대무용가</span>
-                    <span class="tag"><i class="fa-solid fa-building-columns"></i> (주)더헤케이브 아트앤스포츠 Representative</span>
+
+                <!-- Section Quick Navigation Pills -->
+                <div class="hero-nav-pills">
+                    <a href="#section1" class="hero-pill">#1 BeComing ME</a>
+                    <a href="#section2" class="hero-pill">#2 BeComing Blue</a>
+                    <a href="#section3" class="hero-pill">#3 BeComing Movement</a>
+                    <a href="#section4" class="hero-pill">#4 BeComing Presence</a>
                 </div>
-                
-                <div class="hero-buttons animate-fade-up delay-4">
-                    <a href="#artist" class="btn btn-primary">
-                        <span>작가 소개 읽기</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#exhibition" class="btn btn-secondary">
-                        <i class="fa-solid fa-circle-play"></i>
-                        <span>전시 컨셉 감상</span>
+
+                <div class="hero-actions">
+                    <a href="#section1" class="btn btn-primary">
+                        <span>전시 섹션 감상하기</span>
+                        <i class="fa-solid fa-arrow-down"></i>
                     </a>
                 </div>
-                
-                <div class="scroll-indicator">
-                    <span class="scroll-text">SCROLL DOWN</span>
-                    <div class="mouse-icon">
-                        <div class="wheel"></div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- Exhibition Overview -->
-        <section class="section exhibition-section" id="exhibition">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-tag">EXHIBITION CONCEPT</span>
-                    <h2 class="section-title">전시 개요: UNDERCURRENT</h2>
-                    <div class="title-line"></div>
-                </div>
-                
-                <div class="exhibition-grid">
-                    <div class="concept-card main-concept glass-panel">
-                        <div class="concept-icon">
-                            <i class="fa-solid fa-water"></i>
-                        </div>
-                        <h3>수면 아래의 파동 (The Hidden Current)</h3>
-                        <p>
-                            'UNDERCURRENT'는 표면 위로 드러나는 정형화된 움직임 이면에 존재하는 정서적, 신체적 역동성에 주목합니다. 
-                            리듬체조의 극한의 신체 조율과 현대무용의 자유로운 표현 욕구가 만나 수면 밑에서 소용돌이치는 융합적 에너지의 서사를 펼쳐냅니다.
-                        </p>
-                    </div>
-                    
-                    <div class="concept-card glass-panel">
-                        <div class="concept-icon">
-                            <i class="fa-solid fa-network-wired"></i>
-                        </div>
-                        <h3>장르 간의 융합과 시너지</h3>
-                        <p>
-                            연극, 영화, 음악, 전통예술, 스포츠, 그리고 최첨단 미디어 기술이 하나의 공간에서 교차하며, 단일 장르에 갇히지 않는 다각적 감각 체험을 제공합니다.
-                        </p>
-                    </div>
+        <!-- The 4 BeComing Exhibition Sections -->
 
-                    <div class="concept-card glass-panel">
-                        <div class="concept-icon">
-                            <i class="fa-solid fa-child-reaching"></i>
-                        </div>
-                        <h3>확장된 퍼포먼스</h3>
-                        <p>
-                            관객은 단순한 수동적 관람객을 넘어 무대 위 신체언어와 미디어 조명, 사운드의 공명 속에서 예술적 주체로 확장되는 순간을 경험합니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Artist Introduction Section (Core Requirement) -->
-        <section class="section artist-section" id="artist">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">ARTIST PROFILE</span>
-                    <h2 class="section-title">전시 작가 소개</h2>
-                    <div class="title-line"></div>
-                </div>
-
-                <div class="artist-wrapper glass-panel">
-                    <div class="artist-image-container">
-                        <div class="artist-img-frame">
-                            <img src="./assets/artist.png" alt="전시 작가 정은주 대표 / 현대무용가" class="artist-img" id="artistImage">
-                            <div class="artist-img-badge">
-                                <span class="badge-title">정은주</span>
-                                <span class="badge-desc">Jung Eun-joo</span>
-                            </div>
-                        </div>
-                        <div class="artist-quick-meta">
-                            <div class="meta-item">
-                                <i class="fa-solid fa-award"></i>
-                                <div>
-                                    <strong>전 리듬체조 국가대표</strong>
-                                    <span>National Rhythmic Gymnast</span>
-                                </div>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fa-solid fa-building"></i>
-                                <div>
-                                    <strong>(주)더헤케이브 아트앤스포츠 대표</strong>
-                                    <span>CEO, The Hecabe Art & Sports</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="artist-details">
-                        <div class="artist-name-header">
-                            <h3 class="artist-name">정은주 <span class="en-name">Jung Eun-joo</span></h3>
-                            <p class="artist-title-tag">현대무용가 · 예술감독 · (주)더헤케이브 아트앤스포츠 대표</p>
-                        </div>
-
-                        <!-- Provided Text Highlight Box -->
-                        <div class="quote-box">
-                            <i class="fa-solid fa-quote-left quote-icon"></i>
-                            <blockquote class="official-bio">
-                                전 리듬체조 국가대표 출신 현대무용가 정은주는 (주)더헤케이브 아트앤스포츠 (The Hecabe Art & Sports) 대표로, 공연, 교육, 연구를 기반으로 연극·영화· 음악·전통예술·스포츠·미디어와 움직임의 융합을 탐구하며, 장르를 넘나드는 신체언어와 확장된 퍼포먼스를 연구·창작하고 있다.
-                            </blockquote>
-                        </div>
-
-                        <div class="artist-pillars">
-                            <h4 class="pillars-title"><i class="fa-solid fa-compass-drafting"></i> 창작 및 연구 중점 영역</h4>
-                            <div class="pillars-grid">
-                                <div class="pillar-item">
-                                    <div class="pillar-number">01</div>
-                                    <div class="pillar-content">
-                                        <h5>스포츠 & 신체 메커니즘</h5>
-                                        <p>국가대표 리듬체조 선수 경험에서 비롯된 극대화된 유연성과 신체 제어 능력을 현대무용적 예술언어로 승화</p>
-                                    </div>
-                                </div>
-                                <div class="pillar-item">
-                                    <div class="pillar-number">02</div>
-                                    <div class="pillar-content">
-                                        <h5>다원예술 & 미디어 융합</h5>
-                                        <p>연극·영화·음악·전통예술 및 디지털 미디어 매체와의 적극적 통섭을 통한 신개념 공간 연출</p>
-                                    </div>
-                                </div>
-                                <div class="pillar-item">
-                                    <div class="pillar-number">03</div>
-                                    <div class="pillar-content">
-                                        <h5>(주)더헤케이브 아트앤스포츠</h5>
-                                        <p>공연·교육·연구를 삼각축으로 하여 스포츠와 예술의 가치를 연결하는 크리에이티브 융융합 플랫폼 운영</p>
-                                    </div>
-                                </div>
-                                <div class="pillar-item">
-                                    <div class="pillar-number">04</div>
-                                    <div class="pillar-content">
-                                        <h5>확장된 퍼포먼스 관점</h5>
-                                        <p>무대 공간의 한계를 탈피하고 무용수의 신체 언어가 시공간 전체로 확장되는 인터랙티브 경험 구축</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="artist-actions">
-                            <button class="btn btn-primary" id="viewBioDetailBtn">
-                                <i class="fa-solid fa-file-contract"></i>
-                                <span>상세 약력 & 연구 분야 보기</span>
-                            </button>
-                            <a href="#contact" class="btn btn-outline">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                <span>작가 및 협업 문의</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Works & Performance Gallery Section -->
-        <section class="section works-section" id="works">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-tag">WORKS & PERFORMANCES</span>
-                    <h2 class="section-title">전시 작품 & 퍼포먼스 아카이브</h2>
-                    <div class="title-line"></div>
-                </div>
-
-                <!-- Gallery Filters -->
-                <div class="gallery-filter">
-                    <button class="filter-btn active" data-filter="all">전체 작품</button>
-                    <button class="filter-btn" data-filter="movement">신체언어 & 무용</button>
-                    <button class="filter-btn" data-filter="media">미디어 융합</button>
-                    <button class="filter-btn" data-filter="sports">스포츠 융합 연구</button>
-                </div>
-
-                <div class="works-grid">
-                    <!-- Work Card 1 -->
-                    <div class="work-card glass-panel" data-category="movement media">
-                        <div class="work-thumb">
-                            <img src="./assets/artist.png" alt="UNDERCURRENT Scene #1">
-                            <div class="work-overlay">
-                                <button class="btn-play-preview" onclick="openMediaModal('UNDERCURRENT: Motion Sequence I', '현대무용과 수면 아래 심층 신체파동을 시각화한 메인 메인 퍼포먼스 씬.', './assets/artist.png')">
-                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
-                                </button>
-                            </div>
-                            <span class="work-badge">Main Exhibition Work</span>
-                        </div>
-                        <div class="work-info">
-                            <span class="work-cat">현대무용 × 신체언어</span>
-                            <h3 class="work-title">UNDERCURRENT: Deep Motion</h3>
-                            <p class="work-desc">리듬체조의 선형적 궤적과 현대무용의 감정적 무형성을 수면에 결합한 다원 퍼포먼스.</p>
-                        </div>
-                    </div>
-
-                    <!-- Work Card 2 -->
-                    <div class="work-card glass-panel" data-category="media sports">
-                        <div class="work-thumb">
-                            <img src="./assets/gallery1.png" alt="Kinetic Light & Body">
-                            <div class="work-overlay">
-                                <button class="btn-play-preview" onclick="openMediaModal('Kinetic Light & Body Trace', '움직임 궤적을 센서로 추적하여 빛과 사운드로 변환하는 융합 인스톨레이션.', './assets/gallery1.png')">
-                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
-                                </button>
-                            </div>
-                            <span class="work-badge">Media Installation</span>
-                        </div>
-                        <div class="work-info">
-                            <span class="work-cat">미디어아트 × 스포츠 센싱</span>
-                            <h3 class="work-title">Kinetic Body Trace</h3>
-                            <p class="work-desc">신체 동작의 속도와 궤적 데이터를 실시간 음향 및 그래픽 파형으로 재해석한 작품.</p>
-                        </div>
-                    </div>
-
-                    <!-- Work Card 3 -->
-                    <div class="work-card glass-panel" data-category="movement sports">
-                        <div class="work-thumb">
-                            <img src="./assets/artist.png" alt="Hecabe Fusion Study">
-                            <div class="work-overlay">
-                                <button class="btn-play-preview" onclick="openMediaModal('The Hecabe Movement Research', '(주)더헤케이브 아트앤스포츠 연구 기반 무용 및 스포츠 동작 분석 전시.', './assets/artist.png')">
-                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
-                                </button>
-                            </div>
-                            <span class="work-badge">Research Project</span>
-                        </div>
-                        <div class="work-info">
-                            <span class="work-cat">교육 · 연구 × 아카이빙</span>
-                            <h3 class="work-title">The Hecabe Body Architecture</h3>
-                            <p class="work-desc">스포츠 기량과 예술적 창의성의 통합 체계를 연구한 영상 및 사진 아카이브.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interdisciplinary Research Section -->
-        <section class="section research-section" id="research">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">RESEARCH & VISION</span>
-                    <h2 class="section-title">융합 탐구 영역 (Interdisciplinary Fusion)</h2>
-                    <div class="title-line"></div>
-                </div>
-
-                <div class="research-grid">
-                    <div class="research-card glass-panel">
-                        <div class="r-icon"><i class="fa-solid fa-masks-theater"></i></div>
-                        <h4>연극 · 영화 (Theatre & Film)</h4>
-                        <p>서사구조와 신체 감정선의 입체적 연출. 무대 위 스토리를 신체언어로 재구성</p>
-                    </div>
-
-                    <div class="research-card glass-panel">
-                        <div class="r-icon"><i class="fa-solid fa-music"></i></div>
-                        <h4>음악 · 전통예술 (Music & Heritage)</h4>
-                        <p>한국 전통 리듬과 현대적 소리 입자의 결합. 신체 호흡과 운율의 일치</p>
-                    </div>
-
-                    <div class="research-card glass-panel">
-                        <div class="r-icon"><i class="fa-solid fa-volleyball"></i></div>
-                        <h4>스포츠 메커니즘 (Sports Science)</h4>
-                        <p>리듬체조 국가대표 노하우 기반의 정교한 움직임 분석 및 안무학적 적용</p>
-                    </div>
-
-                    <div class="research-card glass-panel">
-                        <div class="r-icon"><i class="fa-solid fa-microchip"></i></div>
-                        <h4>미디어 & 인터랙션 (Media Tech)</h4>
-                        <p>신체 센서 및 프로젝션 맵핑을 결합하여 가상과 현실 무대의 경계를 허뭄</p>
-                    </div>
-                </div>
-
-                <!-- Company Banner -->
-                <div class="company-banner glass-panel">
-                    <div class="company-logo-area">
-                        <i class="fa-solid fa-shield-halved company-icon"></i>
+        <!-- Section #1: BeComing ME -->
+        <section class="section-becoming" id="section1">
+            <div class="site-container">
+                <div class="becoming-card-main">
+                    <div class="becoming-header-row">
                         <div>
-                            <h3>(주)더헤케이브 아트앤스포츠</h3>
-                            <p>The Hecabe Art & Sports Co., Ltd.</p>
+                            <span class="becoming-num-badge">SECTION #1</span>
+                            <h2 class="becoming-title-serif">BeComing ME</h2>
                         </div>
                     </div>
-                    <div class="company-desc">
+
+                    <div class="becoming-text-block">
                         <p>
-                            (주)더헤케이브 아트앤스포츠는 예술(Art)과 스포츠(Sports)의 유기적 통섭을 목표로 
-                            공연 제작, 예술 교육, 신체융합 연구를 수행하는 대표 기관입니다.
+                            이 공간은 작가 정은주의 몸에 축적된 시간과 기억을 담고 있다. 안무 노트, 사진, 책 그리고 몸과 함께한 기록들은 하나의 작품이기 이전에 지금의 그녀를 만들어 온 시간의 조각들이다. 우리는 몸으로 살아가며 수많은 경험을 축적하고, 그 기억은 몸 안에 남아 또 다른 자신을 만들어 간다. 이 공간은 '정은주'라는 한 사람이 되어온 과정을 보여주는 동시에, 각자의 몸 안에도 존재하는 기억의 시작을 마주하는 공간이다.
                         </p>
                     </div>
-                    <div class="company-link">
-                        <span class="badge-established">공연 · 교육 · 연구 플랫폼</span>
+
+                    <!-- Collaborator Tag -->
+                    <div class="collaborator-box">
+                        <span class="collab-label">Artist with Collaborator :</span>
+                        <span class="collab-credits">정은주 with Collaborator 엄준혁 (공간디자인)</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Information & Venue Guide -->
-        <section class="section info-section" id="info">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-tag">VISIT & LEAFLET</span>
-                    <h2 class="section-title">전시 관람 및 안내</h2>
-                    <div class="title-line"></div>
-                </div>
-
-                <div class="info-grid">
-                    <!-- Exhibition Schedule & Venue -->
-                    <div class="info-box glass-panel">
-                        <h3><i class="fa-regular fa-calendar-check"></i> 전시 일시 및 장소</h3>
-                        <ul class="info-list">
-                            <li>
-                                <strong>전시 기간:</strong> 
-                                <span>2026. 08. 01 (토) - 2026. 08. 31 (월)</span>
-                            </li>
-                            <li>
-                                <strong>관람 시간:</strong> 
-                                <span>10:00 - 18:00 (입장 마감 17:30 / 월요일 휴관)</span>
-                            </li>
-                            <li>
-                                <strong>전시 장소:</strong> 
-                                <span>아트앤스포츠 메인 갤러리 (The Hecabe Art Hall)</span>
-                            </li>
-                            <li>
-                                <strong>입장료:</strong> 
-                                <span>무료 관람 (모바일 리플렛을 통한 사전 등록 권장)</span>
-                            </li>
-                        </ul>
-                        
-                        <div class="info-actions">
-                            <button class="btn btn-primary" id="leafletDownloadBtn">
-                                <i class="fa-solid fa-download"></i>
-                                <span>리플렛 PDF / 이미지 저장</span>
-                            </button>
+        <!-- Section #2: BeComing Blue -->
+        <section class="section-becoming" id="section2">
+            <div class="site-container">
+                <div class="becoming-card-main">
+                    <div class="becoming-header-row">
+                        <div>
+                            <span class="becoming-num-badge">SECTION #2</span>
+                            <h2 class="becoming-title-serif">BeComing Blue</h2>
                         </div>
                     </div>
 
-                    <!-- Digital Interactive Pamphlet Quick Preview -->
-                    <div class="info-box glass-panel leaflet-preview-box">
-                        <h3><i class="fa-solid fa-mobile-screen-button"></i> 리플렛 모바일 최적화 안내</h3>
-                        <p class="preview-text">
-                            본 웹사이트는 전시장에 비치된 QR 코드를 통해 방문객의 스마트폰에서 모바일 리플렛으로 직접 활용할 수 있도록 최적화되었습니다.
+                    <div class="becoming-text-block">
+                        <p>
+                            사진은 몸 안에 축적된 기억과 감정이 머무는 서로 다른 상태를 네 가지 다른 블루컬러를 통해 저항, 흡수, 변화, 해방을 상징한다. 하나의 감정이 아니라, 몸이 기억을 품고 또 다른 자신으로 변화해 가는 과정이다. 사진은 그 보이지 않는 흐름을 하나의 장면으로 담아내며, 몸 안에 머무는 기억과 감정의 풍경을 시각화한다.
                         </p>
+                    </div>
 
-                        <div class="leaflet-card-mini">
-                            <div class="mini-header">
-                                <i class="fa-solid fa-bookmark"></i> UNDERCURRENT DIGITAL LEAFLET
-                            </div>
-                            <div class="mini-body">
-                                <h4>정은주 교수 전시 가이드</h4>
-                                <p>전 리듬체조 국가대표 · 현대무용가 · (주)더헤케이브 아트앤스포츠 대표</p>
-                                <span class="mini-tag">모바일 스캔 지원</span>
-                            </div>
+                    <!-- 4 Blue Color States Visual Cards -->
+                    <div class="blue-states-grid">
+                        <div class="blue-state-pill">
+                            <div class="blue-state-dot dot-resistance"></div>
+                            <strong>저항</strong>
+                            <span>Resistance</span>
                         </div>
+                        <div class="blue-state-pill">
+                            <div class="blue-state-dot dot-absorption"></div>
+                            <strong>흡수</strong>
+                            <span>Absorption</span>
+                        </div>
+                        <div class="blue-state-pill">
+                            <div class="blue-state-dot dot-transformation"></div>
+                            <strong>변화</strong>
+                            <span>Transformation</span>
+                        </div>
+                        <div class="blue-state-pill">
+                            <div class="blue-state-dot dot-liberation"></div>
+                            <strong>해방</strong>
+                            <span>Liberation</span>
+                        </div>
+                    </div>
+
+                    <!-- Collaborator Tag -->
+                    <div class="collaborator-box">
+                        <span class="collab-label">Artist with Collaborator :</span>
+                        <span class="collab-credits">정은주 with Collaborator 이현준 (사진) · 조송은 (의상) · 김보배 (메이크업·헤어)</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Guestbook / Comments Section -->
-        <section class="section guestbook-section">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-tag">VISITOR MESSAGES</span>
-                    <h2 class="section-title">전시 방명록 & 응원 한마디</h2>
-                    <div class="title-line"></div>
-                </div>
-
-                <div class="guestbook-container glass-panel">
-                    <form class="guestbook-form" id="guestbookForm">
-                        <div class="form-row">
-                            <input type="text" id="visitorName" placeholder="성함 / 관람객 이름" required>
-                            <input type="text" id="visitorAffiliation" placeholder="소속 / 관련 분야 (선택)">
+        <!-- Section #3: BeComing Movement -->
+        <section class="section-becoming" id="section3">
+            <div class="site-container">
+                <div class="becoming-card-main">
+                    <div class="becoming-header-row">
+                        <div>
+                            <span class="becoming-num-badge">SECTION #3</span>
+                            <h2 class="becoming-title-serif">BeComing Movement</h2>
                         </div>
-                        <textarea id="visitorMessage" rows="3" placeholder="정은주 작가님과 전시 'UNDERCURRENT'에 따뜻한 감상평이나 응원의 메시지를 남겨주세요." required></textarea>
-                        <button type="submit" class="btn btn-primary">
+                    </div>
+
+                    <div class="becoming-text-block">
+                        <p>
+                            댄스필름은 몸 안에 머무는 기억이 움직임으로 이어지는 과정을 담고 있다. 닿지 못한 기억과 놓지 못한 감정에서 시작해, 기억을 받아들이고 공명하며 또 다른 움직임으로 나아가는 몸의 흐름을 따라간다.
+                        </p>
+                    </div>
+
+                    <!-- 2 Dance Films Highlight Cards -->
+                    <div class="dance-films-grid">
+                        <div class="film-item-card">
+                            <h4>〈UNTOUCHABLE〉</h4>
+                            <p>
+                                '닿지 못함'에서 시작된 몸의 기억을 이야기한다. 다가갈 수도, 떠날 수도 없는 경계에서 움직이려는 의지와 놓지 못하는 기억은 서로 충돌하며 원안에 갇혀 반복적으로 챗바퀴에 갖힌 듯 돌고 돈다. ‘닿을 수 없음’이 만들어낸 갈망과 갈증의 흐름을 담아냈다.
+                            </p>
+                        </div>
+                        <div class="film-item-card">
+                            <h4>〈RESONANCE〉</h4>
+                            <p>
+                                몸이 기억을 받아들이고 공명하는 과정을 담아낸다. 몸은 지나온 시간과 감정을 지우지 않고 마치 큰 바다처럼 자신의 일부로 끌어안는다. 그 울림은 새로운 호흡이 되어 몸을 변화시키고, 또 다른 나를 향한 움직임으로 이어진다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Collaborator Tag -->
+                    <div class="collaborator-box">
+                        <span class="collab-label">Artist with Collaborator :</span>
+                        <span class="collab-credits">정은주 with Collaborator 김호진 (영상) · 박선경 (음악) · 박소진 (시놉시스)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section #4: BeComing Presence -->
+        <section class="section-becoming" id="section4">
+            <div class="site-container">
+                <div class="becoming-card-main">
+                    <div class="becoming-header-row">
+                        <div>
+                            <span class="becoming-num-badge">SECTION #4</span>
+                            <h2 class="becoming-title-serif">BeComing Presence</h2>
+                        </div>
+                    </div>
+
+                    <div class="becoming-text-block">
+                        <p>
+                            전시연계 미디어 퍼포먼스는 기록으로 남아 있던 몸이 지금 이 순간 다시 살아 움직이는 시간이다. 사진과 댄스필름을 통해 축적되어 온 기억은 몸과 영상, 음악이 하나의 흐름으로 만나 현재의 공간 안에서 새롭게 생성된다. 매 순간 달라지는 움직임과 감각은 같은 작품이라도 반복되지 않는 하나의 경험이 되며, 몸은 지금 이 순간에도 끊임없이 또 다른 자신이 되어간다.
+                        </p>
+                    </div>
+
+                    <!-- Collaborator Tag -->
+                    <div class="collaborator-box">
+                        <span class="collab-label">Artist with Collaborator :</span>
+                        <span class="collab-credits">정은주 with Collaborator 차재이 (미디어아트) · 후여숭 (음악) · 조송은 (의상)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visitor Guestbook Form & Messages -->
+        <section class="section-guestbook" id="guestbook">
+            <div class="site-container">
+                <div class="guestbook-card-clean">
+                    <div class="section-header-center" style="margin-bottom: 2.5rem;">
+                        <p class="section-sub-tag">VISITOR MESSAGES</p>
+                        <h2 class="section-heading-serif">전시 방명록 & 응원 한마디</h2>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">
+                            정은주 작가님과 4개의 BeComing 섹션에 따뜻한 감상평이나 응원의 메시지를 남겨주세요.
+                        </p>
+                    </div>
+
+                    <form class="guestbook-clean-form" id="guestbookForm">
+                        <div class="form-row-2col">
+                            <input type="text" class="input-clean" id="visitorName" placeholder="성함 / 관람객 성명" required>
+                            <input type="text" class="input-clean" id="visitorAffiliation" placeholder="소속 / 분야 (선택)">
+                        </div>
+                        <textarea class="textarea-clean" id="visitorMessage" rows="3" placeholder="남기실 소중한 감상평을 작성해주세요..." required></textarea>
+                        <button type="submit" class="btn btn-primary" style="align-self: flex-end;">
                             <i class="fa-solid fa-paper-plane"></i>
                             <span>메시지 등록</span>
                         </button>
                     </form>
 
-                    <div class="guestbook-list" id="guestbookList">
-                        <!-- Dynamic Comments insert here -->
-                        <div class="comment-item">
-                            <div class="comment-header">
-                                <strong class="comment-author">김유진 큐레이터</strong>
-                                <span class="comment-date">2026.08.01</span>
+                    <div class="comments-container-clean" id="commentsList">
+                        <div class="comment-box-clean">
+                            <div class="comment-box-top">
+                                <span class="comment-author-name">김유진 큐레이터</span>
+                                <span class="comment-post-date">2026.08.09</span>
                             </div>
-                            <p class="comment-body">리듬체조의 궤적과 현대무용의 깊은 호흡이 만나 완성된 섬세한 신체언어에 깊은 감동을 받았습니다.</p>
+                            <p class="comment-message-text">
+                                BeComing ME부터 Presence까지 이어지는 4단계 신체 기억의 흐름이 감동적입니다. 정은주 대표님의 새로운 시도를 응원합니다!
+                            </p>
                         </div>
-                        <div class="comment-item">
-                            <div class="comment-header">
-                                <strong class="comment-author">박현우 연구원</strong>
-                                <span class="comment-date">2026.08.01</span>
+                        <div class="comment-box-clean">
+                            <div class="comment-box-top">
+                                <span class="comment-author-name">박현우 연구원</span>
+                                <span class="comment-post-date">2026.08.09</span>
                             </div>
-                            <p class="comment-body">(주)더헤케이브 아트앤스포츠의 다원예술 융합 시도가 돋보이는 멋진 전시입니다! 응원합니다.</p>
+                            <p class="comment-message-text">
+                                사진의 4가지 블루 상태와 댄스필름의 공명이 인상 깊었습니다. 멋진 전시 감사합니다.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -480,143 +279,29 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h2>UNDERCURRENT</h2>
-                <p>전시 작가: 정은주 (주)더헤케이브 아트앤스포츠 대표</p>
-                <p class="copyright">© 2026 Jung Eun-joo & The Hecabe Art & Sports. All rights reserved.</p>
+    <!-- Clean Baekrokdam Footer -->
+    <footer class="site-footer-clean">
+        <div class="site-container">
+            <div class="footer-top-grid">
+                <div class="footer-brand-side">
+                    <h3>UNDERCURRENT</h3>
+                    <p>정은주 개인전</p>
+                </div>
+                <ul class="footer-nav-links">
+                    <li><a href="#hero">처음으로</a></li>
+                    <li><a href="#section1">#1 BeComing ME</a></li>
+                    <li><a href="#section2">#2 BeComing Blue</a></li>
+                    <li><a href="#section3">#3 BeComing Movement</a></li>
+                    <li><a href="#section4">#4 BeComing Presence</a></li>
+                    <li><a href="#guestbook">방명록</a></li>
+                </ul>
             </div>
-            <div class="footer-links">
-                <a href="#hero">맨 위로</a>
-                <a href="#artist">작가 소개</a>
-                <a href="#works">전시 작품</a>
-                <a href="#info">관람 안내</a>
+            <div class="footer-bottom-row">
+                <p>© 2026 Jung Eun-joo. All rights reserved.</p>
+                <p>UNDERCURRENT: BeComing Series</p>
             </div>
         </div>
     </footer>
-
-    <!-- Modals -->
-    <!-- Bio Modal -->
-    <div class="modal" id="bioModal">
-        <div class="modal-content glass-panel">
-            <button class="modal-close" id="closeBioModal">&times;</button>
-            <div class="modal-header">
-                <h3>정은주 (Jung Eun-joo) 상세 약력</h3>
-                <span class="modal-subtitle">현대무용가 · 전 리듬체조 국가대표 · (주)더헤케이브 아트앤스포츠 대표</span>
-            </div>
-            <div class="modal-body">
-                <div class="bio-section-item">
-                    <h4><i class="fa-solid fa-graduation-cap"></i> 주요 주요 이력 및 대표 직함</h4>
-                    <ul>
-                        <li>(주)더헤케이브 아트앤스포츠 (The Hecabe Art & Sports) 대표이사 / 예술감독</li>
-                        <li>전 대한민국 리듬체조 국가대표 선수</li>
-                        <li>현대무용 안무가 및 융합예술 연구자</li>
-                        <li>공연, 교육, 연구 기반의 다원예술 프로젝트 총괄 디렉터</li>
-                    </ul>
-                </div>
-                <div class="bio-section-item">
-                    <h4><i class="fa-solid fa-palette"></i> 창작 및 연구 융합 분야</h4>
-                    <ul>
-                        <li>연극·영화·음악·전통예술과 현대무용 신체언어의 인터랙티브 결합</li>
-                        <li>스포츠 메커니즘과 예술 안무학의 통섭적 교류 연구</li>
-                        <li>디지털 미디어 기술 기반의 확장된 퍼포먼스(Extended Performance) 연출</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- QR Code Modal -->
-    <div class="modal" id="qrModal">
-        <div class="modal-content glass-panel center-content">
-            <button class="modal-close" id="closeQrModal">&times;</button>
-            <h3><i class="fa-solid fa-qrcode"></i> 전시 모바일 리플렛 QR 코드</h3>
-            <p>스마트폰 카메라로 아래 QR 코드를 스캔하시면 전시장 모바일 가이드로 연결됩니다.</p>
-            <div class="qr-code-wrapper">
-                <!-- Inline SVG generated high resolution QR Code -->
-                <svg class="qr-svg" viewBox="0 0 200 200" width="180" height="180">
-                    <rect width="200" height="200" fill="#ffffff" rx="12"/>
-                    <!-- QR frame simulation -->
-                    <path d="M20,20 h50 v50 h-50 z M30,30 v30 h30 v-30 z" fill="#0b132b"/>
-                    <rect x="40" y="40" width="10" height="10" fill="#0b132b"/>
-                    <path d="M130,20 h50 v50 h-50 z M140,30 v30 h30 v-30 z" fill="#0b132b"/>
-                    <rect x="150" y="40" width="10" height="10" fill="#0b132b"/>
-                    <path d="M20,130 h50 v50 h-50 z M30,140 v30 h30 v-30 z" fill="#0b132b"/>
-                    <rect x="40" y="150" width="10" height="10" fill="#0b132b"/>
-                    <!-- Decorative matrix dots -->
-                    <g fill="#0b132b">
-                        <rect x="80" y="25" width="12" height="12" rx="2"/>
-                        <rect x="100" y="25" width="12" height="12" rx="2"/>
-                        <rect x="90" y="45" width="12" height="12" rx="2"/>
-                        <rect x="25" y="80" width="12" height="12" rx="2"/>
-                        <rect x="45" y="90" width="12" height="12" rx="2"/>
-                        <rect x="80" y="80" width="15" height="15" rx="3" fill="#c5a059"/>
-                        <rect x="105" y="80" width="15" height="15" rx="3" fill="#c5a059"/>
-                        <rect x="80" y="105" width="15" height="15" rx="3" fill="#c5a059"/>
-                        <rect x="140" y="90" width="12" height="12" rx="2"/>
-                        <rect x="160" y="100" width="12" height="12" rx="2"/>
-                        <rect x="130" y="130" width="12" height="12" rx="2"/>
-                        <rect x="150" y="145" width="12" height="12" rx="2"/>
-                        <rect x="100" y="155" width="12" height="12" rx="2"/>
-                        <rect x="80" y="140" width="12" height="12" rx="2"/>
-                    </g>
-                </svg>
-            </div>
-            <p class="url-text">https://jung-eunjoo-undercurrent.leaflet.art</p>
-            <button class="btn btn-primary" onclick="copyLeafletUrl()">
-                <i class="fa-solid fa-copy"></i> 링크 복사하기
-            </button>
-        </div>
-    </div>
-
-    <!-- Media Preview Modal -->
-    <div class="modal" id="mediaModal">
-        <div class="modal-content glass-panel">
-            <button class="modal-close" id="closeMediaModal">&times;</button>
-            <div id="mediaModalBody">
-                <!-- Dynamic media insert -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Digital Leaflet Fullview Modal -->
-    <div class="modal" id="leafletModal">
-        <div class="modal-content glass-panel leaflet-full-card">
-            <button class="modal-close" id="closeLeafletModal">&times;</button>
-            <div class="leaflet-paper">
-                <div class="lp-header">
-                    <span class="lp-tag">MOBILE LEAFLET</span>
-                    <h2 class="lp-title">UNDERCURRENT</h2>
-                    <p class="lp-sub">정은주 개인전 · 신체언어와 확장된 퍼포먼스</p>
-                </div>
-                <div class="lp-divider"></div>
-                <div class="lp-section">
-                    <h3>작가 소개</h3>
-                    <div class="lp-bio-highlight">
-                        <strong>정은주 (Jung Eun-joo)</strong>
-                        <p>
-                            전 리듬체조 국가대표 출신 현대무용가 정은주는 (주)더헤케이브 아트앤스포츠 (The Hecabe Art & Sports) 대표로, 공연, 교육, 연구를 기반으로 연극·영화· 음악·전통예술·스포츠·미디어와 움직임의 융합을 탐구하며, 장르를 넘나드는 신체언어와 확장된 퍼포먼스를 연구·창작하고 있다.
-                        </p>
-                    </div>
-                </div>
-                <div class="lp-section">
-                    <h3>전시 키워드</h3>
-                    <div class="lp-badges">
-                        <span>#리듬체조국가대표</span>
-                        <span>#현대무용가</span>
-                        <span>#더헤케이브아트앤스포츠</span>
-                        <span>#융합퍼포먼스</span>
-                        <span>#다원예술</span>
-                    </div>
-                </div>
-                <div class="lp-footer">
-                    <p>전시장 가이드 스캔 모드 | Art & Sports Fusion Platform</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Vite Entry Point -->
     <script type="module" src="/main.js"></script>
