@@ -1,62 +1,129 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover, user-scalable=yes">
     <title>UNDERCURRENT | 정은주</title>
-    <meta name="description" content="전시 'UNDERCURRENT' - BeComing ME, BeComing Blue, BeComing Movement, BeComing Presence">
+    <meta name="description"
+        content="전시 'UNDERCURRENT' - Becoming ME, Becoming Blue, Becoming Movement, Becoming Presence">
     <meta property="og:title" content="UNDERCURRENT | 정은주">
-    <meta property="og:description" content="BeComing ME, BeComing Blue, BeComing Movement, BeComing Presence">
-    
-    <!-- Google Fonts: Noto Serif KR & Noto Sans KR -->
+    <meta property="og:description" content="수면 아래의 파동, BeComing의 시간 - Becoming ME, Blue, Movement, Presence">
+    <meta property="og:type" content="website">
+
+    <!-- iOS / Mobile Web App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="UNDERCURRENT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+    <!-- Google Fonts: Noto Serif KR & Noto Sans KR & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
-    <!-- Subtle Background Canvas -->
+    <!-- Subtle Background Ambient Canvas -->
     <canvas id="subtleCanvas"></canvas>
 
-    <!-- Clean Navigation Header -->
+    <!-- Clean Top Navigation Header -->
     <header class="site-header" id="siteHeader">
         <div class="site-container-wide header-inner">
-            <a href="#hero" class="header-logo">
+            <a href="#hero" class="header-logo" aria-label="홈으로 이동">
                 <span class="logo-title">UNDERCURRENT</span>
                 <span class="logo-sub">정은주</span>
             </a>
 
+            <!-- Desktop Nav Links -->
             <nav class="header-nav" id="headerNav">
                 <a href="#hero" class="nav-link active">홈</a>
-                <a href="#section1" class="nav-link">#1 BeComing ME</a>
-                <a href="#section2" class="nav-link">#2 BeComing Blue</a>
-                <a href="#section3" class="nav-link">#3 BeComing Movement</a>
-                <a href="#section4" class="nav-link">#4 BeComing Presence</a>
+                <a href="#section1" class="nav-link">#1 Becoming ME</a>
+                <a href="#section2" class="nav-link">#2 Becoming Blue</a>
+                <a href="#section3" class="nav-link">#3 Becoming Movement</a>
+                <a href="#section4" class="nav-link">#4 Becoming Presence</a>
+                <a href="#credits" class="nav-link">크레딧</a>
                 <a href="#guestbook" class="nav-link">방명록</a>
             </nav>
 
+            <!-- Mobile Hamburger Toggle Button -->
             <div class="header-actions">
-                <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="메뉴 열기">
-                    <i class="fa-solid fa-bars"></i>
+                <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="모바일 메뉴 열기" aria-expanded="false">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
                 </button>
             </div>
         </div>
     </header>
 
+    <!-- iOS Mobile Fullscreen Menu Drawer Backdrop & Content -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+        <div class="drawer-header">
+            <div class="drawer-logo">
+                <span class="drawer-title">UNDERCURRENT</span>
+                <span class="drawer-sub">정은주 개인전</span>
+            </div>
+            <button class="drawer-close-btn" id="mobileMenuClose" aria-label="메뉴 닫기">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav-list">
+            <a href="#hero" class="drawer-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>전시 메인 (Home)</span>
+            </a>
+            <a href="#section1" class="drawer-link">
+                <span class="drawer-sec-badge">01</span>
+                <span>#1 Becoming ME</span>
+            </a>
+            <a href="#section2" class="drawer-link">
+                <span class="drawer-sec-badge">02</span>
+                <span>#2 Becoming Blue</span>
+            </a>
+            <a href="#section3" class="drawer-link">
+                <span class="drawer-sec-badge">03</span>
+                <span>#3 Becoming Movement</span>
+            </a>
+            <a href="#section4" class="drawer-link">
+                <span class="drawer-sec-badge">04</span>
+                <span>#4 Becoming Presence</span>
+            </a>
+            <a href="#credits" class="drawer-link">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>전시 크레딧 (Credits)</span>
+            </a>
+            <a href="#guestbook" class="drawer-link">
+                <i class="fa-solid fa-pen-nib"></i>
+                <span>전시 방명록 (Guestbook)</span>
+            </a>
+        </nav>
+        <div class="drawer-footer">
+            <p>2026 정은주 개인전 〈UNDERCURRENT〉</p>
+        </div>
+    </div>
+
+    <!-- Main Content Flow -->
     <main id="main">
         <!-- Serene Hero Section -->
         <section class="hero-section" id="hero">
             <div class="site-container hero-inner">
                 <!-- Vertical Gradient Accent Line -->
                 <div class="hero-vertical-line"></div>
-                
+
                 <span class="hero-tag">UNDERCURRENT</span>
-                
+
                 <h1 class="hero-title">
                     수면 아래의 파동,<br>
                     <span class="bold-emphasis">BeComing</span>의 시간
@@ -69,10 +136,10 @@
 
                 <!-- Section Quick Navigation Pills -->
                 <div class="hero-nav-pills">
-                    <a href="#section1" class="hero-pill">#1 BeComing ME</a>
-                    <a href="#section2" class="hero-pill">#2 BeComing Blue</a>
-                    <a href="#section3" class="hero-pill">#3 BeComing Movement</a>
-                    <a href="#section4" class="hero-pill">#4 BeComing Presence</a>
+                    <a href="#section1" class="hero-pill">#1 Becoming ME</a>
+                    <a href="#section2" class="hero-pill">#2 Becoming Blue</a>
+                    <a href="#section3" class="hero-pill">#3 Becoming Movement</a>
+                    <a href="#section4" class="hero-pill">#4 Becoming Presence</a>
                 </div>
 
                 <div class="hero-actions">
@@ -84,69 +151,74 @@
             </div>
         </section>
 
-        <!-- The 4 BeComing Exhibition Sections -->
+        <!-- The 4 Becoming Exhibition Sections -->
 
-        <!-- Section #1: BeComing ME -->
+        <!-- Section #1: Becoming ME -->
         <section class="section-becoming" id="section1">
             <div class="site-container">
                 <div class="becoming-card-main">
                     <div class="becoming-header-row">
                         <div>
                             <span class="becoming-num-badge">SECTION #1</span>
-                            <h2 class="becoming-title-serif">BeComing ME</h2>
+                            <h2 class="becoming-title-serif">Becoming ME</h2>
                         </div>
+                        <span class="becoming-sub-badge">신체와 기억의 시작</span>
                     </div>
 
                     <div class="becoming-text-block">
                         <p>
-                            이 공간은 작가 정은주의 몸에 축적된 시간과 기억을 담고 있다. 안무 노트, 사진, 책 그리고 몸과 함께한 기록들은 하나의 작품이기 이전에 지금의 그녀를 만들어 온 시간의 조각들이다. 우리는 몸으로 살아가며 수많은 경험을 축적하고, 그 기억은 몸 안에 남아 또 다른 자신을 만들어 간다. 이 공간은 '정은주'라는 한 사람이 되어온 과정을 보여주는 동시에, 각자의 몸 안에도 존재하는 기억의 시작을 마주하는 공간이다.
+                            이 공간은 작가 정은주의 몸에 축적된 시간과 기억을 담고 있다. 안무 노트, 사진, 책 그리고 몸과 함께한 기록들은 하나의 작품이기 이전에 지금의 그녀를 만들어 온
+                            시간의 조각들이다. 우리는 몸으로 살아가며 수많은 경험을 축적하고, 그 기억은 몸 안에 남아 또 다른 자신을 만들어 간다. 이 공간은 '정은주'라는 한 사람이 되어온
+                            과정을 보여주는 동시에, 각자의 몸 안에도 존재하는 기억의 시작을 마주하는 공간이다.
                         </p>
                     </div>
 
                     <!-- Collaborator Tag -->
                     <div class="collaborator-box">
-                        <span class="collab-label">Artist with Collaborator :</span>
-                        <span class="collab-credits">정은주 with Collaborator 엄준혁 (공간디자인)</span>
+                        <span class="collab-label"><i class="fa-solid fa-users"></i> Collaborator :</span>
+                        <span class="collab-credits">정은주 · 엄준혁 (공간디자인)</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section #2: BeComing Blue -->
+        <!-- Section #2: Becoming Blue -->
         <section class="section-becoming" id="section2">
             <div class="site-container">
                 <div class="becoming-card-main">
                     <div class="becoming-header-row">
                         <div>
                             <span class="becoming-num-badge">SECTION #2</span>
-                            <h2 class="becoming-title-serif">BeComing Blue</h2>
+                            <h2 class="becoming-title-serif">Becoming Blue</h2>
                         </div>
+                        <span class="becoming-sub-badge">4가지 블루의 상태</span>
                     </div>
 
                     <div class="becoming-text-block">
                         <p>
-                            사진은 몸 안에 축적된 기억과 감정이 머무는 서로 다른 상태를 네 가지 다른 블루컬러를 통해 저항, 흡수, 변화, 해방을 상징한다. 하나의 감정이 아니라, 몸이 기억을 품고 또 다른 자신으로 변화해 가는 과정이다. 사진은 그 보이지 않는 흐름을 하나의 장면으로 담아내며, 몸 안에 머무는 기억과 감정의 풍경을 시각화한다.
+                            사진은 몸 안에 축적된 기억과 감정이 머무는 서로 다른 상태를 네 가지 다른 블루컬러를 통해 저항, 흡수, 변화, 해방을 상징한다. 하나의 감정이 아니라, 몸이
+                            기억을 품고 또 다른 자신으로 변화해 가는 과정이다. 사진은 그 보이지 않는 흐름을 하나의 장면으로 담아내며, 몸 안에 머무는 기억과 감정의 풍경을 시각화한다.
                         </p>
                     </div>
 
                     <!-- 4 Blue Color States Visual Cards -->
                     <div class="blue-states-grid">
-                        <div class="blue-state-pill">
+                        <div class="blue-state-pill state-res">
                             <div class="blue-state-dot dot-resistance"></div>
                             <strong>저항</strong>
                             <span>Resistance</span>
                         </div>
-                        <div class="blue-state-pill">
+                        <div class="blue-state-pill state-abs">
                             <div class="blue-state-dot dot-absorption"></div>
                             <strong>흡수</strong>
                             <span>Absorption</span>
                         </div>
-                        <div class="blue-state-pill">
+                        <div class="blue-state-pill state-trans">
                             <div class="blue-state-dot dot-transformation"></div>
                             <strong>변화</strong>
                             <span>Transformation</span>
                         </div>
-                        <div class="blue-state-pill">
+                        <div class="blue-state-pill state-lib">
                             <div class="blue-state-dot dot-liberation"></div>
                             <strong>해방</strong>
                             <span>Liberation</span>
@@ -155,76 +227,129 @@
 
                     <!-- Collaborator Tag -->
                     <div class="collaborator-box">
-                        <span class="collab-label">Artist with Collaborator :</span>
-                        <span class="collab-credits">정은주 with Collaborator 이현준 (사진) · 조송은 (의상) · 김보배 (메이크업·헤어)</span>
+                        <span class="collab-label"><i class="fa-solid fa-users"></i> Collaborator :</span>
+                        <span class="collab-credits">정은주 · 이현준 (사진) · 조송은 (의상) · 김보배 (메이크업·헤어)</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section #3: BeComing Movement -->
+        <!-- Section #3: Becoming Movement -->
         <section class="section-becoming" id="section3">
             <div class="site-container">
                 <div class="becoming-card-main">
                     <div class="becoming-header-row">
                         <div>
                             <span class="becoming-num-badge">SECTION #3</span>
-                            <h2 class="becoming-title-serif">BeComing Movement</h2>
+                            <h2 class="becoming-title-serif">Becoming Movement</h2>
                         </div>
+                        <span class="becoming-sub-badge">댄스 필름 2부작</span>
                     </div>
 
                     <div class="becoming-text-block">
                         <p>
-                            댄스필름은 몸 안에 머무는 기억이 움직임으로 이어지는 과정을 담고 있다. 닿지 못한 기억과 놓지 못한 감정에서 시작해, 기억을 받아들이고 공명하며 또 다른 움직임으로 나아가는 몸의 흐름을 따라간다.
+                            댄스필름은 몸 안에 머무는 기억이 움직임으로 이어지는 과정을 담고 있다. 닿지 못한 기억과 놓지 못한 감정에서 시작해, 기억을 받아들이고 공명하며 또 다른 움직임으로
+                            나아가는 몸의 흐름을 따라간다.
                         </p>
                     </div>
 
                     <!-- 2 Dance Films Highlight Cards -->
                     <div class="dance-films-grid">
                         <div class="film-item-card">
+                            <div class="film-tag">FILM 01</div>
                             <h4>〈UNTOUCHABLE〉</h4>
                             <p>
-                                '닿지 못함'에서 시작된 몸의 기억을 이야기한다. 다가갈 수도, 떠날 수도 없는 경계에서 움직이려는 의지와 놓지 못하는 기억은 서로 충돌하며 원안에 갇혀 반복적으로 챗바퀴에 갖힌 듯 돌고 돈다. ‘닿을 수 없음’이 만들어낸 갈망과 갈증의 흐름을 담아냈다.
+                                '닿지 못함'에서 시작된 몸의 기억을 이야기한다. 다가갈 수도, 떠날 수도 없는 경계에서 움직이려는 의지와 놓지 못하는 기억은 서로 충돌하며 원안에 갇혀
+                                반복적으로 챗바퀴에 갖힌 듯 돌고 돈다. ‘닿을 수 없음’이 만들어낸 갈망과 갈증의 흐름을 담아냈다.
                             </p>
                         </div>
                         <div class="film-item-card">
+                            <div class="film-tag">FILM 02</div>
                             <h4>〈RESONANCE〉</h4>
                             <p>
-                                몸이 기억을 받아들이고 공명하는 과정을 담아낸다. 몸은 지나온 시간과 감정을 지우지 않고 마치 큰 바다처럼 자신의 일부로 끌어안는다. 그 울림은 새로운 호흡이 되어 몸을 변화시키고, 또 다른 나를 향한 움직임으로 이어진다.
+                                몸이 기억을 받아들이고 공명하는 과정을 담아낸다. 몸은 지나온 시간과 감정을 지우지 않고 마치 큰 바다처럼 자신의 일부로 끌어안는다. 그 울림은 새로운 호흡이
+                                되어 몸을 변화시키고, 또 다른 나를 향한 움직임으로 이어진다.
                             </p>
                         </div>
                     </div>
 
                     <!-- Collaborator Tag -->
                     <div class="collaborator-box">
-                        <span class="collab-label">Artist with Collaborator :</span>
-                        <span class="collab-credits">정은주 with Collaborator 김호진 (영상) · 박선경 (음악) · 박소진 (시놉시스)</span>
+                        <span class="collab-label"><i class="fa-solid fa-users"></i> Collaborator :</span>
+                        <span class="collab-credits">정은주 · 김호진 (영상) · 박선경 (음악) · 박소진 (시놉시스)</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section #4: BeComing Presence -->
+        <!-- Section #4: Becoming Presence -->
         <section class="section-becoming" id="section4">
             <div class="site-container">
                 <div class="becoming-card-main">
                     <div class="becoming-header-row">
                         <div>
                             <span class="becoming-num-badge">SECTION #4</span>
-                            <h2 class="becoming-title-serif">BeComing Presence</h2>
+                            <h2 class="becoming-title-serif">Becoming Presence</h2>
                         </div>
+                        <span class="becoming-sub-badge">미디어 퍼포먼스</span>
                     </div>
 
                     <div class="becoming-text-block">
                         <p>
-                            전시연계 미디어 퍼포먼스는 기록으로 남아 있던 몸이 지금 이 순간 다시 살아 움직이는 시간이다. 사진과 댄스필름을 통해 축적되어 온 기억은 몸과 영상, 음악이 하나의 흐름으로 만나 현재의 공간 안에서 새롭게 생성된다. 매 순간 달라지는 움직임과 감각은 같은 작품이라도 반복되지 않는 하나의 경험이 되며, 몸은 지금 이 순간에도 끊임없이 또 다른 자신이 되어간다.
+                            전시연계 미디어 퍼포먼스는 기록으로 남아 있던 몸이 지금 이 순간 다시 살아 움직이는 시간이다. 사진과 댄스필름을 통해 축적되어 온 기억은 몸과 영상, 음악이 하나의
+                            흐름으로 만나 현재의 공간 안에서 새롭게 생성된다. 매 순간 달라지는 움직임과 감각은 같은 작품이라도 반복되지 않는 하나의 경험이 되며, 몸은 지금 이 순간에도
+                            끊임없이 또 다른 자신이 되어간다.
                         </p>
                     </div>
 
                     <!-- Collaborator Tag -->
                     <div class="collaborator-box">
-                        <span class="collab-label">Artist with Collaborator :</span>
-                        <span class="collab-credits">정은주 with Collaborator 차재이 (미디어아트) · 후여숭 (음악) · 조송은 (의상)</span>
+                        <span class="collab-label"><i class="fa-solid fa-users"></i> Collaborator :</span>
+                        <span class="collab-credits">정은주 · 차재이 (미디어아트) · 후여숭 (음악) · 조송은 (의상)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exhibition Credits Section (SECTION #4 다음에 위치) -->
+        <section class="section-credits" id="credits">
+            <div class="site-container">
+                <div class="credits-card-clean">
+                    <div class="credits-header">
+                        <span class="credits-num-badge">EXHIBITION CREDITS</span>
+                        <h3 class="credits-title-serif">전시 크레딧</h3>
+                    </div>
+
+                    <div class="credits-staff-grid">
+                        <div class="credit-row">
+                            <span class="credit-label">기획</span>
+                            <span class="credit-value">최서진, 고은진, 김규리</span>
+                        </div>
+                        <div class="credit-row">
+                            <span class="credit-label">그래픽 디자인</span>
+                            <span class="credit-value">차재윤</span>
+                        </div>
+                        <div class="credit-row">
+                            <span class="credit-label">아카이빙</span>
+                            <span class="credit-value">임현우, 전호영</span>
+                        </div>
+                        <div class="credit-row">
+                            <span class="credit-label">스탭</span>
+                            <span class="credit-value">이정은, 민서연</span>
+                        </div>
+                    </div>
+
+                    <div class="credits-divider"></div>
+
+                    <div class="credits-org-grid">
+                        <div class="org-block">
+                            <span class="org-badge">주최 · 주관</span>
+                            <p class="org-content">㈜더헤케이브 아트앤스포츠</p>
+                        </div>
+                        <div class="org-block">
+                            <span class="org-badge">후원</span>
+                            <p class="org-content">몬어쿠스틱, 이정록한의원</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -234,21 +359,23 @@
         <section class="section-guestbook" id="guestbook">
             <div class="site-container">
                 <div class="guestbook-card-clean">
-                    <div class="section-header-center" style="margin-bottom: 2.5rem;">
+                    <div class="section-header-center">
                         <p class="section-sub-tag">VISITOR MESSAGES</p>
                         <h2 class="section-heading-serif">전시 방명록 & 응원 한마디</h2>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">
-                            정은주 작가님과 4개의 BeComing 섹션에 따뜻한 감상평이나 응원의 메시지를 남겨주세요.
+                        <p class="guestbook-sub-desc">
+                            정은주 작가님과 4개의 Becoming 섹션에 따뜻한 감상평이나 응원의 메시지를 남겨주세요.
                         </p>
                     </div>
 
                     <form class="guestbook-clean-form" id="guestbookForm">
                         <div class="form-row-2col">
-                            <input type="text" class="input-clean" id="visitorName" placeholder="성함 / 관람객 성명" required>
+                            <input type="text" class="input-clean" id="visitorName" placeholder="성함 / 관람객 성명" required
+                                autocomplete="name">
                             <input type="text" class="input-clean" id="visitorAffiliation" placeholder="소속 / 분야 (선택)">
                         </div>
-                        <textarea class="textarea-clean" id="visitorMessage" rows="3" placeholder="남기실 소중한 감상평을 작성해주세요..." required></textarea>
-                        <button type="submit" class="btn btn-primary" style="align-self: flex-end;">
+                        <textarea class="textarea-clean" id="visitorMessage" rows="3"
+                            placeholder="남기실 소중한 감상평을 작성해주세요..." required></textarea>
+                        <button type="submit" class="btn btn-primary btn-submit-mobile">
                             <i class="fa-solid fa-paper-plane"></i>
                             <span>메시지 등록</span>
                         </button>
@@ -261,7 +388,7 @@
                                 <span class="comment-post-date">2026.08.09</span>
                             </div>
                             <p class="comment-message-text">
-                                BeComing ME부터 Presence까지 이어지는 4단계 신체 기억의 흐름이 감동적입니다. 정은주 대표님의 새로운 시도를 응원합니다!
+                                Becoming ME부터 Presence까지 이어지는 4단계 신체 기억의 흐름이 감동적입니다. 정은주 대표님의 새로운 시도를 응원합니다!
                             </p>
                         </div>
                         <div class="comment-box-clean">
@@ -279,7 +406,37 @@
         </section>
     </main>
 
-    <!-- Clean Baekrokdam Footer -->
+    <!-- Mobile Floating Bottom Quick Dock (아이폰 한 손 조작 하단 플로팅 독) -->
+    <aside class="mobile-bottom-dock" id="mobileBottomDock" aria-label="모바일 빠른 섹션 이동">
+        <nav class="dock-nav-container">
+            <a href="#hero" class="dock-item active" data-target="hero" aria-label="홈">
+                <i class="fa-solid fa-house"></i>
+                <span>홈</span>
+            </a>
+            <a href="#section1" class="dock-item" data-target="section1" aria-label="ME">
+                <span class="dock-num">#1</span>
+                <span>ME</span>
+            </a>
+            <a href="#section2" class="dock-item" data-target="section2" aria-label="Blue">
+                <span class="dock-num">#2</span>
+                <span>Blue</span>
+            </a>
+            <a href="#section3" class="dock-item" data-target="section3" aria-label="Movement">
+                <span class="dock-num">#3</span>
+                <span>Move</span>
+            </a>
+            <a href="#section4" class="dock-item" data-target="section4" aria-label="Presence">
+                <span class="dock-num">#4</span>
+                <span>Presence</span>
+            </a>
+            <a href="#guestbook" class="dock-item" data-target="guestbook" aria-label="방명록">
+                <i class="fa-regular fa-comment-dots"></i>
+                <span>방명록</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Clean Baekrokdam Style Footer -->
     <footer class="site-footer-clean">
         <div class="site-container">
             <div class="footer-top-grid">
@@ -289,16 +446,17 @@
                 </div>
                 <ul class="footer-nav-links">
                     <li><a href="#hero">처음으로</a></li>
-                    <li><a href="#section1">#1 BeComing ME</a></li>
-                    <li><a href="#section2">#2 BeComing Blue</a></li>
-                    <li><a href="#section3">#3 BeComing Movement</a></li>
-                    <li><a href="#section4">#4 BeComing Presence</a></li>
+                    <li><a href="#section1">#1 Becoming ME</a></li>
+                    <li><a href="#section2">#2 Becoming Blue</a></li>
+                    <li><a href="#section3">#3 Becoming Movement</a></li>
+                    <li><a href="#section4">#4 Becoming Presence</a></li>
+                    <li><a href="#credits">크레딧</a></li>
                     <li><a href="#guestbook">방명록</a></li>
                 </ul>
             </div>
             <div class="footer-bottom-row">
                 <p>© 2026 Jung Eun-joo. All rights reserved.</p>
-                <p>UNDERCURRENT: BeComing Series</p>
+                <p>UNDERCURRENT: Becoming Series</p>
             </div>
         </div>
     </footer>
@@ -306,4 +464,5 @@
     <!-- Vite Entry Point -->
     <script type="module" src="/main.js"></script>
 </body>
+
 </html>
