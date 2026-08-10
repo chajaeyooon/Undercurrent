@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSubtleCanvas();
     initNavbarAndDrawer();
     initScrollSpy();
-    initGuestbook();
 });
 
 /* ==========================================================================
@@ -220,53 +219,4 @@ function initScrollSpy() {
 
     window.addEventListener('scroll', updateActive, { passive: true });
     updateActive();
-}
-
-/* ==========================================================================
-   4. Visitor Guestbook Handling
-   ========================================================================== */
-function initGuestbook() {
-    const form = document.getElementById('guestbookForm');
-    const list = document.getElementById('commentsList');
-    if (!form || !list) return;
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const nameInput = document.getElementById('visitorName');
-        const affInput = document.getElementById('visitorAffiliation');
-        const msgInput = document.getElementById('visitorMessage');
-
-        const name = nameInput.value.trim();
-        const aff = affInput.value.trim();
-        const msg = msgInput.value.trim();
-
-        if (!name || !msg) return;
-
-        const now = new Date();
-        const dateStr = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')}`;
-
-        const card = document.createElement('div');
-        card.className = 'comment-box-clean';
-        card.innerHTML = `
-            <div class="comment-box-top">
-                <span class="comment-author-name">${escapeHtml(name)} ${aff ? `<small style="font-weight: 500; color: var(--text-muted);">(${escapeHtml(aff)})</small>` : ''}</span>
-                <span class="comment-post-date">${dateStr}</span>
-            </div>
-            <p class="comment-message-text">${escapeHtml(msg)}</p>
-        `;
-
-        list.insertBefore(card, list.firstChild);
-
-        nameInput.value = '';
-        affInput.value = '';
-        msgInput.value = '';
-
-        // Mobile touch friendly feedback
-        alert('소중한 방명록 메시지가 성공적으로 등록되었습니다. 감사합니다.');
-    });
-}
-
-function escapeHtml(str) {
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }

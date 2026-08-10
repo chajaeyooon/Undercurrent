@@ -56,7 +56,6 @@
                 <a href="#section3" class="nav-link">#3 Becoming Movement</a>
                 <a href="#section4" class="nav-link">#4 Becoming Presence</a>
                 <a href="#credits" class="nav-link">크레딧</a>
-                <a href="#guestbook" class="nav-link">방명록</a>
             </nav>
 
             <!-- Mobile Hamburger Toggle Button -->
@@ -104,10 +103,6 @@
             <a href="#credits" class="drawer-link">
                 <i class="fa-solid fa-circle-info"></i>
                 <span>전시 크레딧 (Credits)</span>
-            </a>
-            <a href="#guestbook" class="drawer-link">
-                <i class="fa-solid fa-pen-nib"></i>
-                <span>전시 방명록 (Guestbook)</span>
             </a>
         </nav>
         <div class="drawer-footer">
@@ -354,56 +349,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Visitor Guestbook Form & Messages -->
-        <section class="section-guestbook" id="guestbook">
-            <div class="site-container">
-                <div class="guestbook-card-clean">
-                    <div class="section-header-center">
-                        <p class="section-sub-tag">VISITOR MESSAGES</p>
-                        <h2 class="section-heading-serif">전시 방명록 & 응원 한마디</h2>
-                        <p class="guestbook-sub-desc">
-                            정은주 작가님과 4개의 Becoming 섹션에 따뜻한 감상평이나 응원의 메시지를 남겨주세요.
-                        </p>
-                    </div>
-
-                    <form class="guestbook-clean-form" id="guestbookForm">
-                        <div class="form-row-2col">
-                            <input type="text" class="input-clean" id="visitorName" placeholder="성함 / 관람객 성명" required
-                                autocomplete="name">
-                            <input type="text" class="input-clean" id="visitorAffiliation" placeholder="소속 / 분야 (선택)">
-                        </div>
-                        <textarea class="textarea-clean" id="visitorMessage" rows="3"
-                            placeholder="남기실 소중한 감상평을 작성해주세요..." required></textarea>
-                        <button type="submit" class="btn btn-primary btn-submit-mobile">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>메시지 등록</span>
-                        </button>
-                    </form>
-
-                    <div class="comments-container-clean" id="commentsList">
-                        <div class="comment-box-clean">
-                            <div class="comment-box-top">
-                                <span class="comment-author-name">김유진 큐레이터</span>
-                                <span class="comment-post-date">2026.08.09</span>
-                            </div>
-                            <p class="comment-message-text">
-                                Becoming ME부터 Presence까지 이어지는 4단계 신체 기억의 흐름이 감동적입니다. 정은주 대표님의 새로운 시도를 응원합니다!
-                            </p>
-                        </div>
-                        <div class="comment-box-clean">
-                            <div class="comment-box-top">
-                                <span class="comment-author-name">박현우 연구원</span>
-                                <span class="comment-post-date">2026.08.09</span>
-                            </div>
-                            <p class="comment-message-text">
-                                사진의 4가지 블루 상태와 댄스필름의 공명이 인상 깊었습니다. 멋진 전시 감사합니다.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Mobile Floating Bottom Quick Dock (아이폰 한 손 조작 하단 플로팅 독) -->
@@ -429,9 +374,9 @@
                 <span class="dock-num">#4</span>
                 <span>Presence</span>
             </a>
-            <a href="#guestbook" class="dock-item" data-target="guestbook" aria-label="방명록">
-                <i class="fa-regular fa-comment-dots"></i>
-                <span>방명록</span>
+            <a href="#credits" class="dock-item" data-target="credits" aria-label="크레딧">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>크레딧</span>
             </a>
         </nav>
     </aside>
