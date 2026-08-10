@@ -3,6 +3,14 @@
    Optimized for iPhone (iOS Safari), Mobile Screens, and Desktop Leaflet View
    ========================================================================== */
 
+@font-face {
+    font-family: 'OnulDodam';
+    src: url('./assets/ONULDODAM-REGULAR.OTF') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* Safe Area Insets for iOS (Notch, Dynamic Island, Home Indicator) */
     --sat: env(safe-area-inset-top, 0px);
@@ -31,9 +39,9 @@
     --border-hover: #cbd5e1;
     --border-strong: #0f172a;
 
-    /* Typography */
-    --font-serif: 'Noto Serif KR', 'Batang', serif;
-    --font-sans: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Typography - ONULDODAM Custom Font Applied */
+    --font-serif: 'OnulDodam', 'Noto Serif KR', 'Batang', serif;
+    --font-sans: 'OnulDodam', 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Spacing & Borders */
     --radius-xs: 0.25rem;
