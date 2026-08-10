@@ -1,15 +1,8 @@
 /* ==========================================================================
    UNDERCURRENT - BAEKROKDAM STYLE DESIGN SYSTEM & MOBILE/iOS OPTIMIZATION
    Optimized for iPhone (iOS Safari), Mobile Screens, and Desktop Leaflet View
+   High-Legibility Typography Stack (Pretendard & Noto Serif KR)
    ========================================================================== */
-
-@font-face {
-    font-family: 'OnulDodam';
-    src: url('./assets/ONULDODAM-REGULAR.OTF') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
 
 :root {
     /* Safe Area Insets for iOS (Notch, Dynamic Island, Home Indicator) */
@@ -24,13 +17,13 @@
     --bg-surface-subtle: #f1f5f9;
     --bg-elevated: #ffffff;
 
-    --text-main: #0f172a;       /* Deep slate black */
-    --text-muted: #475569;      /* Calming medium slate */
-    --text-subtle: #94a3b8;     /* Light slate */
+    --text-main: #0f172a;       /* Deep slate black for high contrast */
+    --text-muted: #334155;      /* Crisp slate for excellent readability */
+    --text-subtle: #64748b;     /* Light slate */
     --text-on-accent: #ffffff;
 
-    --accent: #1e293b;          /* Primary dark slate */
-    --accent-hover: #0f172a;
+    --accent: #0f172a;          /* Primary dark slate */
+    --accent-hover: #1e293b;
     --accent-soft: #f1f5f9;
     --accent-blue: #0066ff;     /* Vivid bright blue */
     --accent-blue-deep: #0052cc;
@@ -39,9 +32,9 @@
     --border-hover: #cbd5e1;
     --border-strong: #0f172a;
 
-    /* Typography - ONULDODAM Custom Font Applied */
-    --font-serif: 'OnulDodam', 'Noto Serif KR', 'Batang', serif;
-    --font-sans: 'OnulDodam', 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Typography - Best-in-Class Legibility Stack */
+    --font-serif: 'Noto Serif KR', -apple-system, 'Batang', serif;
+    --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
 
     /* Spacing & Borders */
     --radius-xs: 0.25rem;
@@ -86,10 +79,13 @@ html {
 
 body {
     font-family: var(--font-sans);
-    line-height: 1.85;
-    letter-spacing: -0.025em;
+    font-size: 1rem;
+    line-height: 1.8;
+    letter-spacing: -0.015em;
     background-color: var(--bg-body);
     color: var(--text-main);
+    word-break: keep-all;
+    overflow-wrap: break-word;
     overflow-x: hidden;
     padding-top: calc(4.5rem + var(--sat));
     padding-left: var(--sal);
@@ -182,7 +178,7 @@ input, textarea, select, button {
     padding-left: var(--sal);
     padding-right: var(--sar);
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
@@ -190,7 +186,7 @@ input, textarea, select, button {
 }
 
 .site-header.scrolled {
-    background-color: rgba(255, 255, 255, 0.96);
+    background-color: rgba(255, 255, 255, 0.98);
     box-shadow: var(--shadow-sm);
 }
 
@@ -212,12 +208,12 @@ input, textarea, select, button {
     font-family: var(--font-serif);
     font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.05em;
     color: var(--text-main);
 }
 
 .logo-sub {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-muted);
 }
@@ -235,12 +231,13 @@ input, textarea, select, button {
 }
 
 .nav-link {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-muted);
     transition: var(--transition-fast);
     padding: 0.4rem 0.2rem;
     position: relative;
+    letter-spacing: -0.01em;
 }
 
 .nav-link:hover,
@@ -353,11 +350,12 @@ input, textarea, select, button {
     font-family: var(--font-serif);
     font-size: 1.15rem;
     font-weight: 700;
+    letter-spacing: 0.05em;
     color: var(--text-main);
 }
 
 .drawer-sub {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
 }
 
@@ -398,6 +396,7 @@ input, textarea, select, button {
     color: var(--text-main);
     background-color: transparent;
     transition: var(--transition-fast);
+    letter-spacing: -0.01em;
 }
 
 .drawer-link:active,
@@ -430,13 +429,8 @@ input, textarea, select, button {
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-subtle);
     text-align: center;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     color: var(--text-subtle);
-}
-
-.drawer-footer-sub {
-    margin-top: 0.2rem;
-    color: var(--text-muted);
 }
 
 /* ==========================================================================
@@ -449,13 +443,14 @@ input, textarea, select, button {
     gap: 0.5rem;
     padding: 0.75rem 1.6rem;
     border-radius: var(--radius-full);
-    font-size: 0.92rem;
+    font-size: 0.94rem;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition-fast);
     border: 1px solid transparent;
     min-height: 48px; /* Apple HIG touch standard */
     user-select: none;
+    letter-spacing: -0.01em;
 }
 
 .btn:active {
@@ -520,21 +515,21 @@ input, textarea, select, button {
 
 .hero-tag {
     font-family: var(--font-serif);
-    font-size: clamp(1rem, 2.4vw, 1.25rem);
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
     font-weight: 700;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.22em;
     color: #0066ff; /* 쨍한 파란색 */
     text-transform: uppercase;
     margin-bottom: 1.25rem;
-    padding-left: 0.28em;
+    padding-left: 0.22em;
 }
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(2rem, 5.5vw, 3.8rem);
+    font-size: clamp(1.9rem, 5.2vw, 3.6rem);
     font-weight: 400;
-    line-height: 1.45;
-    letter-spacing: -0.035em;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
     color: var(--text-main);
     margin-bottom: 1.5rem;
     word-break: keep-all;
@@ -547,10 +542,10 @@ input, textarea, select, button {
 
 .hero-description {
     font-family: var(--font-serif);
-    font-size: clamp(0.98rem, 2vw, 1.2rem);
+    font-size: clamp(0.96rem, 2vw, 1.15rem);
     font-weight: 300;
-    line-height: 2.1;
-    letter-spacing: -0.025em;
+    line-height: 1.95;
+    letter-spacing: -0.015em;
     color: var(--text-muted);
     margin-bottom: 2rem;
     max-width: 640px;
@@ -588,8 +583,9 @@ input, textarea, select, button {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     font-weight: 600;
+    letter-spacing: -0.01em;
     padding: 0 1.25rem;
     border-radius: var(--radius-full);
     background-color: var(--bg-surface-subtle);
@@ -661,7 +657,7 @@ input, textarea, select, button {
 .becoming-num-badge {
     font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     color: var(--accent-blue);
     text-transform: uppercase;
     display: block;
@@ -670,23 +666,26 @@ input, textarea, select, button {
 
 .becoming-title-serif {
     font-family: var(--font-serif);
-    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    font-size: clamp(1.5rem, 3.2vw, 2.2rem);
     font-weight: 700;
     color: var(--text-main);
     letter-spacing: -0.02em;
+    line-height: 1.35;
 }
 
 .becoming-sub-badge {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--text-subtle);
+    letter-spacing: -0.01em;
 }
 
 .becoming-text-block {
-    font-family: var(--font-serif);
-    font-size: clamp(0.98rem, 1.8vw, 1.08rem);
-    line-height: 2.15;
-    letter-spacing: -0.025em;
+    font-family: var(--font-sans);
+    font-size: clamp(0.96rem, 1.8vw, 1.05rem);
+    font-weight: 400;
+    line-height: 1.95;
+    letter-spacing: -0.015em;
     color: var(--text-main);
     text-align: left;
     word-break: keep-all;
@@ -698,11 +697,13 @@ input, textarea, select, button {
     background-color: var(--bg-surface-subtle);
     border-left: 3px solid var(--text-main);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    padding: 0.9rem 1.25rem;
+    padding: 0.95rem 1.25rem;
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
     flex-wrap: wrap;
+    line-height: 1.7;
+    letter-spacing: -0.015em;
 }
 
 .section-becoming:nth-child(even) .collaborator-box {
@@ -712,18 +713,19 @@ input, textarea, select, button {
 }
 
 .collab-label {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-weight: 700;
     color: var(--text-main);
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
+    letter-spacing: -0.01em;
 }
 
 .collab-credits {
-    font-size: 0.9rem;
-    line-height: 1.75;
-    letter-spacing: -0.02em;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    letter-spacing: -0.015em;
     color: var(--text-muted);
     font-weight: 500;
 }
@@ -783,15 +785,19 @@ input, textarea, select, button {
 
 .blue-state-pill strong {
     display: block;
-    font-family: var(--font-serif);
-    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.98rem;
+    font-weight: 700;
     color: var(--text-main);
     margin-bottom: 0.15rem;
+    letter-spacing: -0.01em;
 }
 
 .blue-state-pill span {
-    font-size: 0.75rem;
+    font-size: 0.76rem;
+    font-weight: 500;
     color: var(--text-muted);
+    letter-spacing: 0.02em;
 }
 
 /* Section #3: Dance Films Highlight Cards */
@@ -821,7 +827,7 @@ input, textarea, select, button {
 }
 
 .film-tag {
-    font-size: 0.72rem;
+    font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     color: var(--accent-blue);
@@ -829,15 +835,17 @@ input, textarea, select, button {
 
 .film-item-card h4 {
     font-family: var(--font-serif);
-    font-size: 1.18rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--text-main);
+    letter-spacing: -0.015em;
 }
 
 .film-item-card p {
-    font-size: 0.92rem;
-    line-height: 1.95;
-    letter-spacing: -0.02em;
+    font-size: 0.93rem;
+    font-weight: 400;
+    line-height: 1.88;
+    letter-spacing: -0.015em;
     color: var(--text-muted);
     text-align: left;
     word-break: keep-all;
@@ -872,25 +880,16 @@ input, textarea, select, button {
 
 .credits-header {
     border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
 }
 
 .credits-num-badge {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.14em;
     color: var(--accent-blue);
     text-transform: uppercase;
     display: block;
-    margin-bottom: 0.2rem;
-}
-
-.credits-title-serif {
-    font-family: var(--font-serif);
-    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
-    font-weight: 700;
-    color: var(--text-main);
-    letter-spacing: -0.02em;
 }
 
 .credits-staff-grid {
@@ -910,8 +909,10 @@ input, textarea, select, button {
     display: flex;
     align-items: baseline;
     gap: 0.85rem;
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.65rem;
     border-bottom: 1px dashed var(--border-subtle);
+    line-height: 1.65;
+    letter-spacing: -0.015em;
 }
 
 .credit-label {
@@ -923,7 +924,7 @@ input, textarea, select, button {
 }
 
 .credit-value {
-    font-size: 0.92rem;
+    font-size: 0.93rem;
     color: var(--text-muted);
     font-weight: 500;
 }
@@ -965,10 +966,11 @@ input, textarea, select, button {
 }
 
 .org-content {
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     font-weight: 600;
     color: var(--text-main);
-    line-height: 1.6;
+    line-height: 1.65;
+    letter-spacing: -0.015em;
 }
 
 /* ==========================================================================
@@ -1011,15 +1013,18 @@ input, textarea, select, button {
 
 .section-heading-serif {
     font-family: var(--font-serif);
-    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    font-size: clamp(1.5rem, 3.2vw, 2.2rem);
     font-weight: 700;
     color: var(--text-main);
+    letter-spacing: -0.02em;
 }
 
 .guestbook-sub-desc {
     color: var(--text-muted);
-    font-size: 0.92rem;
+    font-size: 0.93rem;
     margin-top: 0.4rem;
+    line-height: 1.7;
+    letter-spacing: -0.015em;
     word-break: keep-all;
 }
 
@@ -1055,11 +1060,13 @@ input, textarea, select, button {
     color: var(--text-main);
     transition: var(--transition-fast);
     min-height: 48px;
+    letter-spacing: -0.01em;
 }
 
 .textarea-clean {
     min-height: 90px;
     resize: vertical;
+    line-height: 1.6;
 }
 
 .input-clean:focus,
@@ -1098,8 +1105,9 @@ input, textarea, select, button {
 
 .comment-author-name {
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: var(--text-main);
+    letter-spacing: -0.01em;
 }
 
 .comment-post-date {
@@ -1108,9 +1116,9 @@ input, textarea, select, button {
 }
 
 .comment-message-text {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     line-height: 1.8;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
     color: var(--text-muted);
     text-align: left;
     word-break: keep-all;
@@ -1158,13 +1166,14 @@ input, textarea, select, button {
     justify-content: center;
     padding: 0.4rem 0.5rem;
     border-radius: var(--radius-full);
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     font-weight: 600;
     color: var(--text-muted);
     min-width: 44px;
     min-height: 44px;
     transition: var(--transition-fast);
     user-select: none;
+    letter-spacing: -0.01em;
 }
 
 .dock-item:active {
@@ -1211,31 +1220,15 @@ input, textarea, select, button {
     font-family: var(--font-serif);
     font-size: 1.3rem;
     font-weight: 700;
+    letter-spacing: 0.05em;
     color: var(--text-main);
     margin-bottom: 0.3rem;
 }
 
 .footer-brand-side p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.footer-nav-links {
-    display: flex;
-    gap: 1.25rem;
-    list-style: none;
-    flex-wrap: wrap;
-}
-
-.footer-nav-links a {
     font-size: 0.88rem;
-    font-weight: 600;
     color: var(--text-muted);
-    transition: var(--transition-fast);
-}
-
-.footer-nav-links a:hover {
-    color: var(--text-main);
+    letter-spacing: -0.01em;
 }
 
 .footer-bottom-row {
